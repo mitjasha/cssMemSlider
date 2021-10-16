@@ -1,6 +1,7 @@
 .container {
     box-sizing: border-box;
     display: block;
+    margin: auto 0;
     padding: 30px;
     width: 100%;
     height: 100vh;
@@ -18,9 +19,9 @@
 }
 
 .slider-item {	
-	display: block;
+	/* display: block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
     width: 60vw;
     line-height: 1.5;
     position: fixed;
