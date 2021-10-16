@@ -7,20 +7,27 @@
 	padding-bottom: 30px;
 }
 
-.slider[data-transition="zoom"] {
-	overflow: hidden;
-}
-
 .slider-item {
 	width: 640px;
 	height: 360px;
 	line-height: 1.5;
+    position: absolute;
 	top: 0;
 	visibility: hidden;
 }
 
 .slider-bullet:checked + .slider-item {
 	visibility: visible;
+}
+
+.slider[data-transition="fade"] .slider-item {
+	visibility: visible;
+	opacity: 0;
+	transition: .3s ease-out opacity;
+}
+
+.slider[data-transition="fade"] .slider-bullet:checked + .slider-item {
+	opacity: 1;
 }
 
 .slider-bullet {
