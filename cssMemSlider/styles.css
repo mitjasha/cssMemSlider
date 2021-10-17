@@ -1,0 +1,133 @@
+:root{
+    --text-a-p: right;
+    --text-a-l: left;
+    --slider-item-h: 70vh;
+    --mar-label: 2em 1em -4em 0;
+    --line-h-pag: 140vh;
+}
+
+@media (max-width: 90rem){
+
+    :root{
+        --slider-item-h: 50vh;
+        --line-h-pag: 100vh;
+    }
+} 
+
+@media (max-width: 48rem){
+
+    :root{
+        --text-a-p: center;
+        --text-a-l: center;
+        --slider-item-h: 40vh;
+        --mar-label: 3em 0em 0em -3em;
+    }
+} 
+
+@media (max-width: 26rem){
+
+    :root{
+        --slider-item-h: 30vh;
+        --line-h-pag: 80vh;
+    }
+} 
+
+@media (max-width: 20rem){
+
+    :root{
+        --text-a-p: center;
+        --slider-item-h: 20vh;
+        --line-h-pag: 50vh;        
+    }
+} 
+
+.container {
+    /* box-sizing: border-box; */
+    display: block;
+    margin: auto 0;
+    padding: 30px;
+    width: 70vw;
+    height: 100vh;
+}
+
+.slider {
+    height: 100%;
+    max-height: 50vh;
+    margin: 0 auto;
+    width: 70%;
+    max-width: 50vw;
+	position: relative;
+	text-align: var(--text-a-p);
+	line-height: var(--line-h-pag);
+}
+
+.slider-item {	
+	/* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+    display: flex;
+    flex-flow: column;
+    width: 60vw;
+    line-height: 1.5;
+    position: fixed;
+	top: 0;
+	visibility: hidden;
+    /* background-color: bisque; */
+}
+
+.slider-item img{
+    height: var(--slider-item-h);
+}
+
+.slider-bullet:checked + .slider-item {
+	visibility: visible;
+}
+
+.slider[data-transition="fade"] .slider-item {
+	visibility: visible;
+	opacity: 0;
+	transition: 1s ease-out opacity;
+    animation-name: anima;
+    animation-timing-function: ease;
+}
+
+.slider[data-transition="fade"] .slider-bullet:checked + .slider-item {
+	opacity: 1;
+}
+
+.slider-bullet {
+	font-size: .75em;
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	position: relative;
+	z-index: 99;
+	-webkit-appearance: none;
+	appearance: none;
+	background: #ccc;
+	border-radius: 1em;
+	transition: .3s ease-out background,
+				.3s ease-out transform;
+}
+
+.slider-bullet:checked {
+	background: #999;
+	outline: none;
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.label {
+    margin: var(--mar-label);
+    text-align: var(--text-a-l);
+}
+
+@keyframes anima {
+    0%  {
+        opacity: 0;
+        
+    }
+    100% {
+        opacity: 1;
+    }
+}
