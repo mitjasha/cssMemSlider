@@ -87,6 +87,8 @@
 	visibility: visible;
 	opacity: 0;
 	transition: 1s ease-out opacity;
+    animation-name: anima;
+    animation-timing-function: ease;
 }
 
 .slider[data-transition="fade"] .slider-bullet:checked + .slider-item {
@@ -120,3 +122,12 @@
     text-align: var(--text-a-l);
 }
 
+@keyframes anima {
+    0%  {
+        opacity: 0;
+        
+    }
+    100% {
+        opacity: 1;
+    }
+}
